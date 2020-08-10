@@ -1,0 +1,19 @@
+<view a:if="{{title}}" class="ev-fr-start">
+    <view class="ev-input-r-12">{{title}}</view>
+    <checkbox-group
+            name="{{name}}" class="checkbox"
+            size="{{size}}" defaultValue="{{defaultValue}}"
+            disabled="{{disabled}}" dataSource="{{dataSource}}"
+            itemDirection="{{itemDirection}}"
+            shape="{{shape}}" value="{{value}}" onChange="onChange">
+        <slot></slot>
+    </checkbox-group>
+</view>
+<checkbox-group a:else
+                name="{{name}}" class="checkbox"
+                size="{{size}}" defaultValue="{{defaultValue}}"
+                disabled="{{disabled}}" dataSource="{{dataSource}}"
+                itemDirection="{{itemDirection}}"
+                shape="{{shape}}" value="{{value}}" onChange="onChange">
+    <slot></slot>
+</checkbox-group>

@@ -1,0 +1,11 @@
+<form-item class="{{className}}"
+           label="{{label}}" size="{{size}}"
+           help="{{help}}" extra="{{extra}}"
+           validateState="{{validateState}}"
+           labelAlign="{{labelAlign}}"
+           labelTextAlign="{{labelTextAlign}}"
+           required="{{required}}" asterisk="{{asterisk}}"
+           requiredMessage="{{requiredMessage}}"
+>
+    <slot></slot>
+</form-item>

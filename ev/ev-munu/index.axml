@@ -1,0 +1,29 @@
+<view>
+  <menu class="my-menu" defaultOpenKeys="sub-menu">
+    <item key="1">Option 1</item>
+    <item disabled key="2">Disabled option 2</item>
+    <divider key="divider" />
+    <group label="Group">
+      <item key="group-1">Group option 1</item>
+      <item key="group-2">Group option 2</item>
+    </group>
+    <divider />
+    <sub-menu key="sub-menu" label="Sub menu">
+      <item key="sub-1">Sub option 1</item>
+      <item key="sub-2">Sub option 2</item>
+      <item disabled key="sub-3">
+        <view>Disabled Option Link 3</view>
+      </item>
+      <item key="sub-4">
+        <view>Option Link 4</view>
+      </item>
+    </sub-menu>
+    <item key="3">Option 3</item>
+    <item disabled key="4">
+      <view>Disabled Option Link</view>
+    </item>
+    <item key="5">
+      <view>Option Link</view>
+    </item>
+  </menu>
+</view>

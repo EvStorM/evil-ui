@@ -1,0 +1,15 @@
+.cardBox {
+  display: inline-block;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+.titleBox {
+  padding: 8px;
+  color: #333333;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0px;
+  border-bottom: 1px solid #E6E9ED;
+}

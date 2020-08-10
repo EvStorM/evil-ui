@@ -1,0 +1,40 @@
+<swiper
+        current="{{current}}"
+        class="{{className}}"
+        duration="{{duration}}"
+        interval="{{interval}}"
+        circular="{{circular}}"
+        autoplay="{{autoplay}}"
+        indicator-dots="{{indicatorDots}}"
+        indicator-color="{{indicatorColor}}"
+        indicator-active-color="{{indicatorActiveColor}}"
+        previousMargin="{{previousMargin}}"
+        next-margin="{{nextMargin}}"
+        vertical="{{vertical}}"
+        onChange="onChange"
+        onTransition="onTransition"
+        onAnimationEnd="onAnimationEnd"
+>
+    <swiper-item a:if="{{$slots[1]}}">
+        <slot name="1">
+        </slot>
+    </swiper-item>
+    <swiper-item a:if="{{$slots[2]}}">
+        <slot name="2">
+        </slot>
+    </swiper-item>
+    <swiper-item a:if="{{$slots[3]}}">
+        <slot name="3">
+        </slot>
+    </swiper-item>
+    <swiper-item a:if="{{$slots[4]}}">
+        <slot name="4">
+        </slot>
+    </swiper-item>
+    <swiper-item a:if="{{$slots[5]}}">
+        <slot name="5">
+        </slot>
+    </swiper-item>
+</swiper>
+
+

@@ -1,0 +1,14 @@
+<overlay
+        visible="{{visible}}"
+        safeNode="{{safeNode}}"
+        hasMask
+        disableScroll
+        needAdjust
+        offset="{{offset}}"
+        align="{{align}}"
+        onRequestClose="onClose"
+>
+    <view>
+        <slot>slot</slot>
+    </view>
+</overlay>

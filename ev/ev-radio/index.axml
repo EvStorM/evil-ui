@@ -1,0 +1,11 @@
+<radio
+        class="{{className}}"
+        value="{{value}}"
+        checked="{{checked}}"
+        disabled="{{disabled}}"
+        defaultChecked="{{defaultChecked}}"
+        id="{{id}}"
+        onChange="onChange"
+>
+    <slot></slot>
+</radio>

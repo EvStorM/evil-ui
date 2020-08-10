@@ -1,0 +1,6 @@
+<view class="cardBox">
+    <slot>
+        <tr></tr>
+        <tr></tr>
+    </slot>
+</view>

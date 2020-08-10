@@ -1,0 +1,10 @@
+<button class="{{className}}"
+        disabled="{{disabled}}"
+        loading="{{loading}}"
+        iconSize="{{iconSize}}"
+        type="{{type}}"
+        onTap="onTap">
+    <slot>
+        <view>button</view>
+    </slot>
+</button>

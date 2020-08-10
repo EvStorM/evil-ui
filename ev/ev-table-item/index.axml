@@ -1,0 +1,5 @@
+<table-column title="{{title}}" align="{{align}}"
+              width="{{width}}" sortable="{{sortable}}"
+              filters="{{filters}}" dataIndex="{{dataIndex}}"/>
+
+

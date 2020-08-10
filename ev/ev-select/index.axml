@@ -1,0 +1,18 @@
+<view a:if="{{title}}" class="{{className}}">
+    <view class="ev-select-12">{{title}}</view>
+    <select class="selected {{custom ? 'custom' :''}}"
+            onChange="onChange" dataSource="{{dataSource}}"
+            autoWidth="{{autoWidth}}" mode="{{mode}}" value="{{value}}"
+            state="{{state}}" followTrigger="{{followTrigger}}" disabled="{{disabled}}"
+            size="{{size}}" placeholder="{{placeholder}}" defaultValue="{{defaultValue}}">
+    </select>
+</view>
+<view a:else class="{{className}}">
+    <select class="selected {{custom ? 'custom' :''}}"
+            dataSource="{{dataSource}}" onChange="onChange"
+            autoWidth="{{autoWidth}}" mode="{{mode}}" value="{{value}}"
+            state="{{state}}" followTrigger="{{followTrigger}}" disabled="{{disabled}}"
+            size="{{size}}" placeholder="{{placeholder}}">
+    </select>
+</view>
+

@@ -1,0 +1,88 @@
+<view class="ev-infoFr">
+    <view class="ev-sideToTakeUp">
+        <view class="ev-info ev-fc">
+            <image class="image" src="../../images/logo.png"/>
+            <text class="ev-h1 ev-p-t-10">庚辛知识库</text>
+            <text class="ev-c6 ev-p-t-10">成都魁首科技</text>
+        </view>
+        <view class="ev-menu">
+            <view onTap="itemSelect" data-index="{{index}}" data-component="{{item.component}}"
+                  class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}" a:for="{{routes}}"
+                  key="{{index}}">{{item.name}}
+            </view>
+        </view>
+    </view>
+    <view class="ev-infoFc">
+        <view class="ev-topLabel">
+            <view class="labelBox ev-fr">
+                <view class="ev-h1">
+                    {{titleName}}
+                </view>
+                <view class="ev-fr">
+                    <view class="ev-fr" onTap="dueToTime">
+                        <image class="ev-icon ev-m-l-6 {{dueTo ? 'colorRed':''}}" src="../../images/icon-time.png"/>
+                        <text class="ev-m-l-6 {{dueTo ? 'colorRed':''}}">到期时间：{{dueToTime}}</text>
+                    </view>
+                    <view class="ev-fr ev-m-l-16 ev-c-primary" onTap="contactUs">
+                        <image class="ev-icon ev-m-l-6" src="../../images/icon-contact-way.png"/>
+                        <text class="ev-m-l-6">联系我们</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ev-infoBody">
+            <view class="ev-infoBox">
+                <slot>
+                    <view>default slot & default value</view>
+                </slot>
+            </view>
+        </view>
+    </view>
+    <overlay
+            visible="{{visible}}"
+            hasMask
+            align="cc cc"
+            disableScroll
+            onRequestClose="onClose"
+    >
+        <view class="ev-contactUs ev-iFc">
+            <image onTap="onClose" class="ev-icon-circle" src="../../images/x-circle.png"></image>
+            <view class="fontcolor">扫描二维码或者点击按钮联系我们</view>
+            <view class="ev-iFr">
+                <view class="ev-iFc">
+                    <image class="ev-imageBox ev-m-l-24" src="../../images/dingdingQR.png"/>
+                    <text>旺旺</text>
+                </view>
+                <view class="ev-iFc">
+                    <image class="ev-imageBox ev-m-l-24" src="../../images/wangwangQR.png"/>
+                    <text>钉钉</text>
+                </view>
+            </view>
+            <view class="ev-iFr ptis">
+                <button onTap="openIM" type="primary">旺旺联系</button>
+            </view>
+        </view>
+    </overlay>
+    <overlay
+            visible="{{visible2}}"
+            hasMask
+            align="cc cc"
+            disableScroll
+            onRequestClose="onClose2"
+    >
+        <view class="ev-dueToTime ev-iFc">
+            <image onTap="onClose2" class="ev-icon-circle" src="../../images/x-circle.png"></image>
+            <view class="fontcolor">
+            </view>
+            <view class="ev-iFr">
+                小程序即将到期
+            </view>
+            <view class="ev-iFr ptis">
+                <button onTap="dueToTime" type="primary">点击续费</button>
+            </view>
+        </view>
+    </overlay>
+    <view a:if="{{visibleFlexd}}" class="renewal" onTap="dueToTime">
+        续费
+    </view>
+</view>

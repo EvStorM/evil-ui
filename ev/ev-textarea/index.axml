@@ -1,0 +1,17 @@
+<view>
+    <textarea
+            class="{{className}}"
+            placeholder="{{placeholder}}"
+            maxLength="{{maxLength}}"
+            value="{{value}}"
+            defaultValue="{{defaultValue}}"
+            onChange="onChange"
+            onBlur="onBlur"
+            disabled="{{disabled}}"
+            rows="{{rows}}"
+            autoHeight="{{autoHeight}}"
+            cutString="{{cutString}}"
+            readOnly="{{readOnly}}"
+            hasLimitHint="{{hasLimitHint}}"
+    /></textarea>
+</view>

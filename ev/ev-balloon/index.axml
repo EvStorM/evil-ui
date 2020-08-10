@@ -1,0 +1,24 @@
+<balloon
+        type="{{type}}"
+        visible="{{visible}}"
+        defaultVisible="{{defaultVisible}}"
+        onVisibleChange="onVisibleChange"
+        onClose="onClose"
+        alignEdge="{{alignEdge}}"
+        closable="{{closable}}"
+        align="{{align}}"
+        offset="{{offset}}"
+        needAdjust="{{needAdjust}}"
+        delay="{{delay}}"
+        onAfterClose="{{onAfterClose}}"
+        triggerType="{{triggerType}}"  >
+    <view slot="trigger" onTap="changeVisible">
+        <slot></slot>
+    </view>
+    <view>
+        <slot name="balloon">
+            <view class="content-title">balloon title</view>
+            <view>balloon content</view>
+        </slot>
+    </view>
+</balloon>

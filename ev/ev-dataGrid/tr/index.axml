@@ -1,0 +1,5 @@
+<view>
+    <slot>
+        <view></view>
+    </slot>
+</view>

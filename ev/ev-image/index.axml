@@ -1,0 +1,11 @@
+<image src="{{src}}"
+       mode="{{mode}}"
+       class="{{className}}"
+       lazy-load="{{lazyLoad}}"
+       onLoad="onLoad"
+       onError="onError"
+       onTap="onTap"
+       catchTap="catchTap"
+></image>
+
+

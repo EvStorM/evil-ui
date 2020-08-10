@@ -1,0 +1,163 @@
+
+.ev-sideToTakeUp {
+  display: inline-block;
+  min-width: 12vw;
+  min-height: 100vh;
+  width: 12vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.ev-info {
+  min-width: 12vw;
+  min-height: 18vw;
+  width: 12vw;
+  height: 18vw;
+}
+
+.ev-h1 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.ev-c6 {
+  color: #999999;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.ev-menu {
+  min-width: 12vw;
+  min-height: auto;
+  width: 12vw;
+  height: auto;
+  border-top: none;
+}
+
+.ev-menu-item {
+  color: #333333;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding: 18px;
+}
+
+.ev-item-selected {
+  color: #304FFE;
+  border-right: 4px solid #304FFE;
+  background-color: #F7F8FA;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ev-topLabel {
+  display: inline-block;
+  min-width: 88vw;
+  min-height: 52px;
+  width: 88vw;
+  height: 52px;
+  background-color: #FFFFFF;
+}
+
+.labelBox {
+  padding: 14px;
+}
+
+.ev-infoBody {
+  display: inline-block;
+  min-width: 88vw;
+  min-height: 92vh;
+  width: 88vw;
+  height: 92vh;
+  background-color: #F7F8FA;
+  overflow: scroll;
+}
+
+.ev-infoBox {
+  padding: 1.4vw 1.4vw 0;
+
+}
+
+.ev-infoFr {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.ev-infoFc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+.ev-contactUs {
+  width: 420px;
+  height: 320px;
+  background-color: #FFFFFF;
+}
+
+.ev-dueToTime {
+  width: 320px;
+  height: 220px;
+  background-color: #FFFFFF;
+}
+
+.ev-imageBox {
+  width: 120px;
+  height: 120px;
+}
+
+.ev-iFc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ev-iFr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.fontcolor {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.ptis {
+  padding-top: 12px;
+}
+
+.colorRed {
+  color: #F23C3C;
+  filter: invert(0%) sepia(82%) saturate(7500%) hue-rotate(8deg) brightness(92%) contrast(101%);
+}
+
+.renewal {
+  border: 1px solid #eee;
+  color: #F23C3C;
+  position: fixed;
+  right: 0;
+  bottom: 160px;
+  padding: 10px 20px;
+  background-color: #FFF;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 10px 10px 10px #e3e3e3;
+}

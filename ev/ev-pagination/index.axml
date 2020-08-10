@@ -1,0 +1,10 @@
+<view>
+    <pagination
+            defaultCurrent="{{defaultCurrent}}" shape="{{shape}}"
+            size="{{size}}" type="{{type}}" current="{{current}}"
+            defaultCurrent="{{defaultCurrent}}" total="{{total}}"
+            onChange="onChange" pageShowCount="{{pageShowCount}}"
+            pageSize="{{pageSize}}" pageSizeSelector="{{pageSizeSelector}}"
+            hideOnlyOnePage="{{hideOnlyOnePage}}" showJump="{{showJump}}"
+    />
+</view>

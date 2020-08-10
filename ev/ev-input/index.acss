@@ -1,0 +1,8 @@
+.ev-input-r-12 {
+  white-space: nowrap;
+  margin-right: 8px;
+  color: #333333;
+}
+.inputed{
+  width: 150px;
+}

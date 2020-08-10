@@ -1,0 +1,13 @@
+.ev-select-12 {
+  padding-right: 12px;
+}
+
+.selected {
+  min-width: 50px;
+  width: 150px;
+  display: inline-block;
+}
+
+.custom {
+  display: block;
+}
