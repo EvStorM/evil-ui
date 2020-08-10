@@ -2,12 +2,12 @@
 
 # Evil UI
 
-<!-- [![npm package](https://img.shields.io/npm/v/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui)
-[![GitHub stars](https://img.shields.io/github/stars/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/network/members)
-[![NPM downloads](https://img.shields.io/npm/dm/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui)
-[![GitHub issues](https://img.shields.io/github/issues/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/issues)
-[![GitHub license](https://img.shields.io/github/license/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/blob/master/LICENSE) -->
+[![npm package](https://img.shields.io/npm/v/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/evil-ui)
+[![GitHub stars](https://img.shields.io/github/stars/Alibaba-mp/mini-ali-ui.svg)](https://github.com/EvStorM/evil-ui/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Alibaba-mp/mini-ali-ui.svg)](https://github.com/EvStorM/evil-ui/network/members)
+[![NPM downloads](https://img.shields.io/npm/dm/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/evil-ui)
+[![GitHub issues](https://img.shields.io/github/issues/Alibaba-mp/mini-ali-ui.svg)](https://github.com/EvStorM/evil-ui/issues)
+[![GitHub license](https://img.shields.io/github/license/Alibaba-mp/mini-ali-ui.svg)](https://github.com/EvStorM/evil-ui/blob/master/LICENSE)
 
 ## 特性
 
