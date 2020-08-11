@@ -2,7 +2,6 @@ import * as React from 'react'
 import {useNativeEffect} from "remax";
 
 
-
 function getQrcode(str, [margin, color]) {
     let qrcode = ''
     const opts = {
@@ -24,15 +23,13 @@ function getQrcode(str, [margin, color]) {
     })
     return qrcode
 }
-
-
 const QrCode = (props) => {
     const [imgUrl, setImgUrl] = React.useState(null)
 
     useNativeEffect(() => {
         let str = getQrcode(props.str + '', [props.margin, props.color])
         setImgUrl(str)
-    }, [imgUrl])
+    }, [props.str])
 
     return (
         <image mode="aspectFit" style={'width:100%;height: 100%'} src={imgUrl}></image>
