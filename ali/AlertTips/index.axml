@@ -1,0 +1,7 @@
+<view class="ev-fr">
+    <icon type="{{type}}"></icon>
+    <slot>
+        <view></view>
+    </slot>
+    <icon a:if="{{hasClear}}" type="clear" ontap="onclose"></icon>
+</view>

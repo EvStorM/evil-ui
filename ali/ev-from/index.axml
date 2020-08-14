@@ -1,0 +1,6 @@
+<form data-name="{{dataName}}" size="{{size}}" labelAlign="{{labelAlign}}"
+      labelTextAlign="{{labelTextAlign}}" value="{{value}}"
+      onChange="onChange" labelCol="{{labelCol}}" class="{{className}}"
+      wrapperCol="{{wrapperCol}}">
+    <slot></slot>
+</form>

@@ -1,8 +1,0 @@
-<radio-group
-        name="{{name}}"
-        size="{{size}}" defaultValue="{{defaultValue}}"
-        disabled="{{disabled}}" dataSource="{{dataSource}}"
-        itemDirection="{{itemDirection}}"
-        shape="{{shape}}" value="{{value}}" onChange="onChange">
-    <slot></slot>
-</radio-group>

@@ -1,0 +1,11 @@
+<progress
+        class="{{className}}"
+        size="{{size}}"
+        shape="{{shape}}"
+        percent="{{percent}}"
+        state="{{state}}"
+        progressive="{{progressive}}"
+        hasBorder="{{hasBorder}}"
+        color="{{color}}"
+        backgroundColor="{{backgroundColor}}"
+></progress>

@@ -1,0 +1,9 @@
+<table class="{{className}}" dataSource="{{dataSource}}" hasBorder="{{hasBorder}}"
+       hasHeader="{{hasHeader}}" isZebra="{{isZebra}}"
+       loading="{{loading}}" fixedHeader="{{fixedHeader}}"
+       maxBodyHeight="{{maxBodyHeight}}" stickyHeader="{{stickyHeader}}"
+       offsetTop="{{offsetTop}}"
+       onBodyScroll="onBodyScroll"
+       onSort="onSort" onFilter="onFilter">
+    <slot></slot>
+</table>

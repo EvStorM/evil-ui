@@ -1,0 +1,51 @@
+<view a:if="{{title}}" class="ev-fr-start">
+    <view class="ev-input-r-12">{{title}}</view>
+    <input
+            class="{{className}}"
+            value="{{value}}"
+            size="{{size}}"
+            defaultValue="{{defaultValue}}"
+            placeholder="{{placeholder}}"
+            onChange="onChange"
+            onKeyDown="onKeyDown"
+            onFocus="onFocus"
+            onBlur="onBlur"
+            onClear="onClear"
+            onPressEnter="onPressEnter"
+            state="{{state}}"
+            addonTextBefore="{{addonTextBefore}}"
+            addonTextAfter="{{addonTextAfter}}"
+            hasClear="{{hasClear}}"
+            hasBorder="{{hasBorder}}"
+            disabled="{{disabled}}"
+            maxLength="{{maxLength}}"
+            readOnly="{{readOnly}}"
+            htmlType="{{type}}"
+            hint="{{hint}}"
+    />
+</view>
+<view a:else class="{{className}}">
+    <input
+           class="inputed"
+           value="{{value}}"
+           size="{{size}}"
+           defaultValue="{{defaultValue}}"
+           placeholder="{{placeholder}}"
+           onChange="onChange"
+           onKeyDown="onKeyDown"
+           onFocus="onFocus"
+           onBlur="onBlur"
+           onClear="onClear"
+           onPressEnter="onPressEnter"
+           state="{{state}}"
+           addonTextBefore="{{addonTextBefore}}"
+           addonTextAfter="{{addonTextAfter}}"
+           hasClear="{{hasClear}}"
+           hasBorder="{{hasBorder}}"
+           disabled="{{disabled}}"
+           maxLength="{{maxLength}}"
+           readOnly="{{readOnly}}"
+           htmlType="{{type}}"
+           hint="{{hint}}"
+    />
+</view>

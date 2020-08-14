@@ -1,0 +1,15 @@
+<tab
+        class="{{className}}"
+        size="{{size}}"
+        shape="{{shape}}"
+        defaultActiveKey="{{defaultActiveKey}}"
+        animation="{{animation}}"
+        excessMode="{{excessMode}}"
+        tabPosition="{{tabPosition}}"
+        triggerType="{{triggerType}}"
+        onTap="onTap"
+        onChange="onChange"
+        onClose="onClose"
+>
+    <slot></slot>
+</tab>

@@ -1,0 +1,8 @@
+<tab-item
+        class="{{className}}"
+        title="{{title}}"
+        disabled="{{disabled}}"
+        closeable="{{closeable}}"
+>
+    <slot></slot>
+</tab-item>
