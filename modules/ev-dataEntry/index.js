@@ -1,15 +1,8 @@
 import * as React from 'react'
 import {View} from "remax/ali";
-import EvSelect from "../ev-select";
-import EvInput from "../ev-input";
-import RadioGroup from "../ev-radioGroup";
-import CheckGroup from "../ev-checkGroup";
-import EvRadio from "../ev-radio";
-import EvCheck from "../ev-check";
-import FromItem from "../ev-fromItem";
-import EvTextarea from '../ev-textarea'
+import {Select, Input, RadioGroup, CheckGroup, Radio, CheckBox, FormItem, Textarea} from '../../index'
 
-export default class DataEntry extends React.Component {
+export class DataEntry extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -99,14 +92,14 @@ export default class DataEntry extends React.Component {
             <View style={`width: ${width}; height:${height};padding:${padding};`}>
                 {type && type == 'select' &&
                 <View className={'ali-fc-start'}>
-                    <EvSelect dataSource={dataSource && dataSource} disabledValue={disabledValue}
-                              defaultValue={defaultValue} disabled={disabled}
-                              onRef={this.onRef} custom={this.state.value == '自定义'}
-                              onChange={this.onChange.bind(this)}></EvSelect>
+                    <Select dataSource={dataSource && dataSource} disabledValue={disabledValue}
+                            defaultValue={defaultValue} disabled={disabled}
+                            onRef={this.onRef} custom={this.state.value == '自定义'}
+                            onChange={this.onChange.bind(this)}></Select>
                     {this.state.value && this.state.value == '自定义' &&
-                    <EvInput className={'ali-m-t-6'} defaultValue={defaultValue} size={'medium'}
-                             disabledValue={disabledValue} placeholder={placeholder}
-                             onBlur={this.onChangeInput.bind(this)}></EvInput>
+                    <Input className={'ali-m-t-6'} defaultValue={defaultValue} size={'medium'}
+                           disabledValue={disabledValue} placeholder={placeholder}
+                           onBlur={this.onChangeInput.bind(this)}></Input>
                     }
                 </View>
                 }
@@ -116,17 +109,17 @@ export default class DataEntry extends React.Component {
                 }
                 {type && type == 'checkGroup' &&
                 <View>
-                    <EvSelect dataSource={dataSource && dataSource} disabled={disabled}
+                    <Select dataSource={dataSource && dataSource} disabled={disabled}
                               defaultValue={defaultValue}
                               onRef={this.onRef} mode={'multiple'}
-                              onChange={this.onChange.bind(this)}></EvSelect>
+                              onChange={this.onChange.bind(this)}></Select>
                 </View>
                 }
                 {type && type == 'input' &&
-                <EvInput size={'medium'} disabled={disabled} defaultValue={defaultValue}
+                <Input size={'medium'} disabled={disabled} defaultValue={defaultValue}
                          disabledValue={disabledValue} placeholder={placeholder}
                          maxLength={max}
-                         onBlur={this.onChangeInput.bind(this)}></EvInput>
+                         onBlur={this.onChangeInput.bind(this)}></Input>
                 }
                 {type && type == 'radioGroup' &&
                 <RadioGroup disabled={disabled} onChange={this.onChange.bind(this)} defaultValue={defaultValue}
@@ -139,25 +132,25 @@ export default class DataEntry extends React.Component {
                     </CheckGroup>
                     {this.state.value && (this.state.value[this.state.value.length - 1] == '自定义'
                         || this.state.customValue) &&
-                    <EvInput className={'ali-m-t-6 ali-dis-b'} size={'medium'} defaultValue={defaultValue}
-                             placeholder={placeholder} onBlur={this.onCustomValue.bind(this)}></EvInput>
+                    <Input className={'ali-m-t-6 ali-dis-b'} size={'medium'} defaultValue={defaultValue}
+                             placeholder={placeholder} onBlur={this.onCustomValue.bind(this)}></Input>
                     }
                 </View>
                 }
                 {type && type == 'radio' &&
-                <EvRadio>
-                    <EvInput disabled={disabled} size={'medium'}
-                             onChange={this.onChange.bind(this)}></EvInput>
-                </EvRadio>}
+                <Radio>
+                    <Input disabled={disabled} size={'medium'}
+                             onChange={this.onChange.bind(this)}></Input>
+                </Radio>}
                 {type && type == 'check' &&
                 <CheckGroup
                 >
                     {dataSource && dataSource.map(item => {
                         return (
-                            <EvCheck disabled={disabled} defaultValue={defaultValue}
+                            <CheckBox disabled={disabled} defaultValue={defaultValue}
                                      onChange={this.onChange.bind(this)}>
                                 {item.label}
-                            </EvCheck>
+                            </CheckBox>
                         )
                     })
                     }
@@ -165,7 +158,7 @@ export default class DataEntry extends React.Component {
 
                 }
                 {type && type == 'textarea' &&
-                <EvTextarea placeholder={placeholder} defaultValue={defaultValue}
+                <Textarea placeholder={placeholder} defaultValue={defaultValue}
                             maxLength={max}
                             onBlur={this.onChangeInput.bind(this)}/>
                 }
@@ -173,3 +166,8 @@ export default class DataEntry extends React.Component {
         )
     }
 }
+
+
+
+
+

@@ -3,7 +3,7 @@ import {View, Image} from 'remax/ali'
 import style from './loading.less'
 import {from, interval, timer} from "rxjs";
 
-export default class EvLoading extends React.Component {
+export class Loading extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

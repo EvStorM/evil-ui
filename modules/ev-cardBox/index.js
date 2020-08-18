@@ -4,7 +4,7 @@ import style from './cardBox.css'
 import {timer} from "rxjs";
 import loading from './802.gif'
 
-export default class CardBox extends React.Component {
+export class CardBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
