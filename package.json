@@ -1,43 +1,12 @@
 {
-  "_from": "evil-ui@^1.1.0",
-  "_id": "evil-ui@1.1.0",
-  "_inBundle": false,
-  "_integrity": "sha512-o6hdmRwyNK1qx3xxLAKRIl44/JQSW/4xIpVgf38YfTVRVwsxpvJz6NR6u2EBhgwHjPQ2f+/Z2tt8/VQHh2KTow==",
-  "_location": "/evil-ui",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "evil-ui@^1.1.0",
-    "name": "evil-ui",
-    "escapedName": "evil-ui",
-    "rawSpec": "^1.1.0",
-    "saveSpec": null,
-    "fetchSpec": "^1.1.0"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/evil-ui/-/evil-ui-1.1.0.tgz",
-  "_shasum": "51827734fcda4dbfe375f6b6c4f32df43c391415",
-  "_spec": "evil-ui@^1.1.0",
-  "_where": "/Users/evstorm/MiniProjects/PCsmartShoppers",
-  "author": {
-    "name": "evilstorm"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "[![npm package](https://img.shields.io/npm/v/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui) [![GitHub stars](https://img.shields.io/github/stars/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/network/members) [![NPM downloads](https://img.shields.io/npm/dm/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui) [![GitHub issues](https://img.shields.io/github/issues/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/issues) [![GitHub license](https://img.shields.io/github/license/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/blob/master/LICENSE)",
-  "keywords": [
-    "evil-ui",
-    "evil",
-    "taobaoui"
-  ],
-  "license": "ISC",
-  "main": "index.js",
   "name": "evil-ui",
+  "version": "1.1.1",
+  "description": "[![npm package](https://img.shields.io/npm/v/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui) [![GitHub stars](https://img.shields.io/github/stars/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/network/members) [![NPM downloads](https://img.shields.io/npm/dm/mini-ali-ui.svg?style=flat-square)](https://www.npmjs.com/package/mini-ali-ui) [![GitHub issues](https://img.shields.io/github/issues/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/issues) [![GitHub license](https://img.shields.io/github/license/Alibaba-mp/mini-ali-ui.svg)](https://github.com/Alibaba-mp/mini-ali-ui/blob/master/LICENSE)",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.1.0"
+  "keywords": ["evil-ui","evil","taobaoui","qn","千牛ui"],
+  "author": "evilstorm",
+  "license": "ISC"
 }
