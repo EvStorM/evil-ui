@@ -1,0 +1,21 @@
+<import-sjs name="m1" from="./index.sjs"/>
+
+<view class="item-wrap" style="height: {{ itemWrapHeight }}px;">
+    <view
+            a:for="{{list}}"
+            a:key="id"
+            class="item {{cur == index ? 'cur':''}} {{curZ == index ? 'zIndex':''}} {{itemTransition && index !== cur ? 'itemTransition':''}} {{item.fixed ? 'fixed' : ''}}"
+            data-key="{{item.sortKey}}"
+            data-index="{{index}}"
+            style="transform: translate3d({{index === cur ? tranX + 'px' : item.tranX}}, {{index === cur ? tranY + 'px' : item.tranY}}, 0);width: {{100 / columns}}%"
+            onTap="itemClick"
+            onLongTap="longPress"
+            onTouchMove="{{dragging ? 'touchMove':''}}"
+            onTouchEnd="{{dragging ? 'touchEnd':''}}">
+        <!-- start:请在该区域编写自己的渲染逻辑 -->
+        <view>
+            {{item.data.title}}
+        </view>
+        <!-- end:请在该区域编写自己的渲染逻辑 -->
+    </view>
+</view>

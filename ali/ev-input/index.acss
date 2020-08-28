@@ -3,6 +3,6 @@
   margin-right: 8px;
   color: #333333;
 }
-.inputed{
-  width: 150px;
+.next-input.next-medium{
+  height: auto;
 }

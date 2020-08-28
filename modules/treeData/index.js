@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {View, Image} from 'remax/ali'
 import styles from './treeData.less'
-
+import {Select, Input} from '../../index'
 
 export class TreeData extends React.Component {
     constructor(props) {
@@ -9,17 +9,16 @@ export class TreeData extends React.Component {
     }
 
     static defaultProps = {
-        width: "10px",
-        height: "10px",
-        padding: "10px",
         tier: 1,
     }
+
     render() {
         return (
-            <View className={styles.mainBox}
-                  style={`width: ${this.props.width}; height:${this.props.height};padding:${this.props.padding};margin: ${this.props.tier * 10}px;`}>
-                <Image className={styles.imgBox}></Image>
-                <View>选款式</View>
+            <View className={styles.mainBox}>
+                <View className={styles.optionsBox}>选款式</View>
+                <View>折叠</View>
+                <Select className={styles.Select}/>
+                <Input className={styles.Input}/>
             </View>
         )
     }

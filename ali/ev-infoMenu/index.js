@@ -1,5 +1,6 @@
 import fmtEvent from "../_util/fmtEvent";
-
+import cloud from "@tbmp/mp-cloud-sdk";
+import dayjs from "dayjs";
 
 Component({
     mixins: [],
@@ -7,7 +8,8 @@ Component({
         itemSelect: 0,
         visible: false,
         visible2: false,
-        visibleFlexd: false
+        visibleFlexd: false,
+        dueToTime: '1970.01.01 00:00'
     },
     props: {
         location: '',
@@ -16,9 +18,13 @@ Component({
         routes: null,
         dueTo: false,
         serviceUrl: null,
+        DeadLineQueryFunc: null,
         dueToTime: '2020.12.12 12:12'
     },
     didMount() {
+        cloud.init({
+            env: 'online'
+        })
         const {location, routes} = this.props
         if (location && routes) {
             let finds = routes.findIndex(item => item.component == location)
@@ -28,18 +34,30 @@ Component({
                 titleName: routes[finds].name
             })
         }
-        if (this.props.dueTo) {
-            this.setData({
-                visible2: true
-            })
-        }
+        this.getDueToTime()
+
     },
     didUpdate() {
     },
     didUnmount() {
-
     },
     methods: {
+        getDueToTime() {
+            cloud && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
+                let dueToTime = res.data[0].deadline
+                let dueTo = dayjs(dueToTime).diff(dayjs(), 'day') <= 3 ? true : false
+                console.log(dueTo);
+                this.setData({
+                    dueToTime,
+                    dueTo
+                })
+                if (dueTo) {
+                    this.setData({
+                        visible2: true
+                    })
+                }
+            })
+        },
         itemSelect(e) {
             this.props.onSelect && this.props.onSelect(e.currentTarget.dataset.component);
             this.setData({
@@ -50,6 +68,14 @@ Component({
         contactUs(e) {
             this.setData({
                 visible: true
+            })
+        },
+        clearAuth() {
+            my.qn.cleanToken({
+                success: (res) => {
+                },
+                fail: (res) => {
+                }
             })
         },
         dueToTime() {

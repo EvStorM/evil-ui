@@ -27,6 +27,7 @@ Component({
         disabledValue: null,
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
+        hasLimitHint: false, // 最大长度样式
         readOnly: false, //  Boolean 只读
         // cutString: false,
         hint: null, // 水印 (Icon的type类型，和hasClear占用一个地方)

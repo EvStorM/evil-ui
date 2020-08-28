@@ -30,8 +30,10 @@ export class Input extends React.Component {
         hasClear: true, //Boolean 是否出现clear按钮
         hasBorder: true,//Boolean 是否有边框
         disabledValue: null,
+
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
+        hasLimitHint: false,
         readOnly: false, //  Boolean 只读
         // cutString: false,
         hint: null, // 水印 (Icon的type类型，和hasClear占用一个地方)
@@ -41,7 +43,7 @@ export class Input extends React.Component {
 
     componentDidMount() {
         if (this.props.defaultValue !== '') {
-            this.setData({
+            this.setState({
                 value: this.props.defaultValue
             })
             // this.props.onChange && this.props.onChange(this.props.defaultValue);
@@ -51,7 +53,7 @@ export class Input extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.disabledValue != null) {
-            this.setData({
+            this.setState({
                 value: this.props.disabledValue,
                 disabled: true
             })
@@ -117,6 +119,7 @@ export class Input extends React.Component {
                 hasBorder={props.hasBorder}
                 disabled={props.disabled}
                 maxLength={props.maxLength}
+                hasLimitHint={props.hasLimitHint}
                 readOnly={props.readOnly}
                 htmlType={props.type}
                 hint={props.hint}
