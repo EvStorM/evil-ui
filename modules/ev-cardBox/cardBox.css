@@ -16,7 +16,8 @@
     border-bottom: 1px solid #E6E9ED;
 }
 .bodyBox {
-    height: calc(100% - 2vw - 2vw);
+    height: calc(100% - 2vw - 4vw);
+    overflow: auto;
 }
 .body {
     width: 100%;

@@ -27,6 +27,7 @@ Component({
         disabledValue: null,
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
+        autoFocus: false, // 自动聚焦
         hasLimitHint: false, // 最大长度样式
         readOnly: false, //  Boolean 只读
         // cutString: false,

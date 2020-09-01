@@ -1,4 +1,5 @@
 import fmtEvent from "../_util/fmtEvent";
+
 Component({
     mixins: [],
     data: {},
@@ -20,8 +21,7 @@ Component({
         onError() {
         },
         onTap(e) {
-            let event = fmtEvent(this.props, e);
-            this.props.onTap && this.props.onTap(event);
+            this.props.onTap && this.props.onTap(e);
         },
         catchTap() {
         }

@@ -56,7 +56,7 @@ export class Select extends React.Component {
         this.setState({
             value: e
         })
-        this.props.onChange && this.props.onChange(ee)
+        this.props.onChange && this.props.onChange(e)
     }
 
     render() {

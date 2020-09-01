@@ -19,6 +19,7 @@ export class Input extends React.Component {
         defaultValue: '', //初始化值
         placeholder: '', //输入提示
         title: '',
+        autoFocus:false,
         onChange: null, //发生改变的时候触发的回调
         onKeyDown: null, //键盘按下的时候触发的回调
         onFocus: null,  //获取焦点时候触发的回调
@@ -113,6 +114,7 @@ export class Input extends React.Component {
                 onClear={this.onClear.bind(this)}
                 onPressEnter={this.onPressEnter.bind(this)}
                 state={props.state}
+                autoFocus={props.autoFocus}
                 addonTextBefore={props.addonTextBefore}
                 addonTextAfter={props.addonTextAfter}
                 hasClear={props.hasClear}

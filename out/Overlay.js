@@ -21,6 +21,14 @@ export class Overlay extends React.Component {
         align: 'cc cc'
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.visible !== this.props.visible) {
+            this.setState({
+                visible: this.props.visible
+            })
+        }
+    }
+
     onTap(e) {
         this.setState({
             visible: true
@@ -47,7 +55,7 @@ export class Overlay extends React.Component {
                 needAdjus={props.hasMask}
                 offset={props.offset}
                 align={props.align}
-                onRequestClose={this.onClose.bind(this)}>
+                onClose={this.onClose.bind(this)}>
                 {props.children}
             </Overl>
         )
