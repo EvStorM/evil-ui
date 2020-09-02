@@ -43,7 +43,7 @@ Component({
     },
     methods: {
         getDueToTime() {
-            cloud && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
+            cloud && this.props.DeadLineQueryFunc && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
                 let dueToTime = res.data[0].deadline
                 let dueTo = dayjs(dueToTime).diff(dayjs(), 'day') <= 3 ? true : false
                 console.log(dueTo);

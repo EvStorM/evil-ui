@@ -31,7 +31,6 @@ export class Input extends React.Component {
         hasClear: true, //Boolean 是否出现clear按钮
         hasBorder: true,//Boolean 是否有边框
         disabledValue: null,
-
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
         hasLimitHint: false,
