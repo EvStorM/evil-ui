@@ -91,8 +91,7 @@ export class Input extends React.Component {
     }
 
     onPressEnter(e) {
-        let event = fmtEvent(this.props, e);
-        this.props.onPressEnter && this.props.onPressEnter(event);
+        this.props.onPressEnter && this.props.onPressEnter(this.state.value);
     }
 
     render() {

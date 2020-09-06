@@ -18,6 +18,22 @@ export class RadioGroup extends React.Component {
         dataSource: [],
         itemDirection: 'hoz'
     }
+
+    componentDidMount() {
+        this.setState({
+            defaultValue: this.props.defaultValue
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.defaultValue !== this.state.defaultValue) {
+            console.log(prevProps.defaultValue);
+            this.setState({
+                defaultValue: prevProps.defaultValue
+            })
+        }
+    }
+
     onChange = (e) => {
         this.props.onChange && this.props.onChange(e)
     }
@@ -27,7 +43,7 @@ export class RadioGroup extends React.Component {
         return (
             <RadG
                 name={props.name} class={props.className}
-                size={props.size} defaultValue={props.defaultValue}
+                size={props.size} defaultValue={this.state.defaultValue}
                 disabled={props.disabled} dataSource={props.dataSource}
                 itemDirection={props.itemDirection}
                 shape={props.shape} value={props.value} onChange={this.onChange.bind(this)}

@@ -18,6 +18,7 @@ export class CardBox extends React.Component {
         width: '100%',
         height: 'auto',
         padding: '17px',
+        minHeight: '0px',
         title: '',
         margin: '',
         isShow: false,
@@ -54,7 +55,8 @@ export class CardBox extends React.Component {
                   style={`background-color: ${props.color};
                   width: ${props.width}; 
                   height: ${props.height};
-                  margin:${props.margin};        
+                  margin:${props.margin};
+                  min-height:${props.minHeight};        
 `}>
                 {props.title &&
                 <View className={style.titleBox}>

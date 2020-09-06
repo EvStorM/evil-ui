@@ -1,14 +1,30 @@
 <view class="ev-infoFr">
     <view class="ev-sideToTakeUp">
-        <view class="ev-info ev-fc">
-            <image class="image" src="../../images/logo.png"/>
-            <text class="ev-h1 ev-p-t-10">庚辛知识库</text>
-            <text class="ev-c6 ev-p-t-10">成都魁首科技</text>
+        <view class="ev-fc">
+            <view class="ev-info ev-fc">
+                <image class="image" src="../../images/logo.png"/>
+                <text class="ev-h1 ev-p-t-10">{{appName}}</text>
+                <text class="ev-c6 ev-p-t-10">成都魁首科技</text>
+            </view>
+            <view class="ev-menu">
+                <view onTap="itemSelect" data-index="{{index}}" data-component="{{item.component}}"
+                      class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}" a:for="{{routes}}"
+                      key="{{index}}">{{item.name}}
+                </view>
+            </view>
         </view>
-        <view class="ev-menu">
-            <view onTap="itemSelect" data-index="{{index}}" data-component="{{item.component}}"
-                  class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}" a:for="{{routes}}"
-                  key="{{index}}">{{item.name}}
+        <view class="ev-otherInfo ev-fc">
+            <view class="ev-fc" onTap="dueToTime">
+                <text class="ev-m-l-6 {{dueTo ? 'colorRed':''}}">系统到期时间：</text>
+                <view>{{dueToStr}}</view>
+            </view>
+            <view class="ev-bottomJump">
+                <view onTap="useGuide">
+                    <text>使用指南</text>
+                </view>
+                <view onTap="contactUs">
+                    <text>联系我们</text>
+                </view>
             </view>
         </view>
     </view>
@@ -17,16 +33,6 @@
             <view class="labelBox ev-fr">
                 <view class="ev-h1">
                     {{titleName}}
-                </view>
-                <view class="ev-fr">
-                    <view class="ev-fr" onTap="dueToTime">
-                        <image class="ev-icon ev-m-l-6 {{dueTo ? 'colorRed':''}}" src="../../images/icon-time.png"/>
-                        <text class="ev-m-l-6 {{dueTo ? 'colorRed':''}}">到期时间：{{dueToTime}}</text>
-                    </view>
-                    <view class="ev-fr ev-m-l-16 ev-c-primary" onTap="contactUs">
-                        <image class="ev-icon ev-m-l-6" src="../../images/icon-contact-way.png"/>
-                        <text class="ev-m-l-6">联系我们</text>
-                    </view>
                 </view>
             </view>
         </view>

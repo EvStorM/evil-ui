@@ -12,6 +12,7 @@ Component({
         dueToTime: '1970.01.01 00:00'
     },
     props: {
+        appName: '庚辛小程序',
         location: '',
         titleName: '首页',
         onSelect: null,
@@ -46,9 +47,11 @@ Component({
             cloud && this.props.DeadLineQueryFunc && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
                 let dueToTime = res.data[0].deadline
                 let dueTo = dayjs(dueToTime).diff(dayjs(), 'day') <= 3 ? true : false
+                let dueToStr = dayjs(dueToTime).format('YYYY年MM月DD日hh:mm:ss')
                 console.log(dueTo);
                 this.setData({
                     dueToTime,
+                    dueToStr,
                     dueTo
                 })
                 if (dueTo) {
@@ -69,6 +72,16 @@ Component({
             this.setData({
                 visible: true
             })
+        },
+        useGuide() {
+            let useGuideUrl = this.props.useGuideUrl
+            my.qn.navigateToWebPage({
+                url: useGuideUrl,
+                success: res => {
+                },
+                fail: res => {
+                }
+            });
         },
         clearAuth() {
             my.qn.cleanToken({
