@@ -19,7 +19,7 @@ export class Input extends React.Component {
         defaultValue: '', //初始化值
         placeholder: '', //输入提示
         title: '',
-        autoFocus:false,
+        autoFocus: false,
         onChange: null, //发生改变的时候触发的回调
         onKeyDown: null, //键盘按下的时候触发的回调
         onFocus: null,  //获取焦点时候触发的回调
@@ -46,18 +46,23 @@ export class Input extends React.Component {
             this.setState({
                 value: this.props.defaultValue
             })
-            // this.props.onChange && this.props.onChange(this.props.defaultValue);
         }
         this.props.onRef && this.props.onRef(this)
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.disabledValue != null) {
+        if (prevProps.disabledValue != null) {
             this.setState({
                 value: this.props.disabledValue,
                 disabled: true
             })
             this.props.onChange && this.props.onChange(this.props.disabledValue);
+        }
+        if (prevProps.propValue !== this.props.propValue) {
+            console.log(this.props.propValue,'prevProps.propValue');
+            this.setState({
+                propValue: this.props.propValue
+            })
         }
     }
 
@@ -103,7 +108,8 @@ export class Input extends React.Component {
                 className={props.className}
                 value={value}
                 size={props.size}
-                defaultValue={props.defaultValue}
+                propValue={this.state.propValue}
+                defaultValue={this.state?.defaultValue}
                 placeholder={props.placeholder}
                 onChange={this.onChange.bind(this)}
                 onKeyDown={this.onKeyDown.bind(this)}

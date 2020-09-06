@@ -40,7 +40,6 @@ Component({
             this.setData({
                 value: this.props.defaultValue
             })
-            // this.props.onChange && this.props.onChange(this.props.defaultValue);
         }
         this.props.onRef && this.props.onRef(this)
     },
@@ -51,6 +50,11 @@ Component({
                 disabled: true
             })
             this.props.onChange && this.props.onChange(this.props.disabledValue);
+        }
+        if (this.props.propValue != null){
+            this.setData({
+                value: this.props.propValue,
+            })
         }
     },
     didUnmount() {
