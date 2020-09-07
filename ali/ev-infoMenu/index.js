@@ -1,6 +1,7 @@
 import fmtEvent from "../_util/fmtEvent";
 import cloud from "@tbmp/mp-cloud-sdk";
 import dayjs from "dayjs";
+import {qnSubscribeDeadLineQuery} from "../../../hooks/cloudFunc";
 
 Component({
     mixins: [],
@@ -23,9 +24,13 @@ Component({
         dueToTime: '2020.12.12 12:12'
     },
     didMount() {
-        cloud.init({
-            env: 'online'
-        })
+        process.env.NODE_ENV !== 'production' ?
+            cloud.init({
+                // env: 'online'
+                env: 'test'
+            }) : cloud.init({
+                env: 'online'
+            })
         const {location, routes} = this.props
         if (location && routes) {
             let finds = routes.findIndex(item => item.component == location)
@@ -44,11 +49,10 @@ Component({
     },
     methods: {
         getDueToTime() {
-            cloud && this.props.DeadLineQueryFunc && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
+            cloud && qnSubscribeDeadLineQuery(cloud, ['', '']).subscribe(res => {
                 let dueToTime = res.data[0].deadline
                 let dueTo = dayjs(dueToTime).diff(dayjs(), 'day') <= 3 ? true : false
                 let dueToStr = dayjs(dueToTime).format('YYYY年MM月DD日hh:mm:ss')
-                console.log(dueTo);
                 this.setData({
                     dueToTime,
                     dueToStr,

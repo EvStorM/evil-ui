@@ -22,7 +22,8 @@ export class RadioGroup extends React.Component {
 
     componentDidMount() {
         this.setState({
-            defaultValue: this.props.defaultValue
+            defaultValue: this.props.defaultValue,
+            value: this.props.propValue
         })
     }
 

@@ -8,7 +8,8 @@
             </view>
             <view class="ev-menu">
                 <view onTap="itemSelect" data-index="{{index}}" data-component="{{item.component}}"
-                      class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}" a:for="{{routes}}"
+                      class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}"
+                      a:for="{{routes}}"
                       key="{{index}}">{{item.name}}
                 </view>
             </view>
@@ -16,7 +17,7 @@
         <view class="ev-otherInfo ev-fc">
             <view class="ev-fc" onTap="dueToTime">
                 <text class="ev-m-l-6 {{dueTo ? 'colorRed':''}}">系统到期时间：</text>
-                <view>{{dueToStr}}</view>
+                <view class="ev-m-t-6 {{dueTo ? 'colorRed':''}}">{{dueToStr}}</view>
             </view>
             <view class="ev-bottomJump">
                 <view onTap="useGuide">

@@ -66,7 +66,9 @@ export class CardBox extends React.Component {
                 <View className={props.keepOut ? style.bod : props.title ? style.body : style.bodyBox}>
                     {isShow &&
                     <View className={style.loadBox}>
-                        <Image className={style.loadImg} src={loading}/>
+                        <View className={style.load}>
+                            <Image className={style.loadImg} src={loading}/>
+                        </View>
                     </View>
                     }
                     {!isShow && !props.preview &&

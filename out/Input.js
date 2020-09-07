@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Inp from '../ali/ev-input'
-import fmtEvent from "../ali/_util/fmtEvent";
 
 export class Input extends React.Component {
     constructor(props) {
@@ -16,7 +15,8 @@ export class Input extends React.Component {
         type: 'text',
         value: '',
         size: 'medium', //尺寸  可选值: 'small'(小) 'medium'(中) 'large'(大)
-        defaultValue: '', //初始化值
+        defaultValue: '', //初始化固定值
+        propValue: '', //初始化动态值
         placeholder: '', //输入提示
         title: '',
         autoFocus: false,
@@ -42,9 +42,13 @@ export class Input extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({
+            propValue: this.props.propValue
+        })
         if (this.props.defaultValue !== '') {
             this.setState({
-                value: this.props.defaultValue
+                value: this.props.defaultValue,
+                propValue: this.props.propValue
             })
         }
         this.props.onRef && this.props.onRef(this)
@@ -58,8 +62,7 @@ export class Input extends React.Component {
             })
             this.props.onChange && this.props.onChange(this.props.disabledValue);
         }
-        if (prevProps.propValue !== this.props.propValue) {
-            console.log(this.props.propValue,'prevProps.propValue');
+        if (prevProps.propValue !== this.state.propValue) {
             this.setState({
                 propValue: this.props.propValue
             })
