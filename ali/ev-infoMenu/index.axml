@@ -10,7 +10,7 @@
                 <view onTap="itemSelect" data-index="{{index}}" data-component="{{item.component}}"
                       class="{{itemSelect == index ? 'ev-menu-item ev-item-selected':'ev-menu-item'}}"
                       a:for="{{routes}}"
-                      key="{{index}}">{{item.name}}
+                      key="{{item.component}}">{{item.name}}
                 </view>
             </view>
         </view>

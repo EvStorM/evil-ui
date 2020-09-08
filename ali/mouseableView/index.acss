@@ -1,0 +1,15 @@
+.one {
+  height: 300px;
+  width: 500px;
+  background-color: darkorange;
+  position: relative;
+}
+
+.two {
+  left: 0;
+  top: 0;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: cadetblue;
+}

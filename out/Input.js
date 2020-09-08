@@ -64,7 +64,8 @@ export class Input extends React.Component {
         }
         if (prevProps.propValue !== this.state.propValue) {
             this.setState({
-                propValue: this.props.propValue
+                propValue: this.props.propValue,
+                value: this.props.propValue
             })
         }
     }
@@ -89,6 +90,7 @@ export class Input extends React.Component {
     }
 
     onBlur(e) {
+        console.log(e,this.state.value,'onBlur');
         this.props.onBlur && this.props.onBlur(this.state.value);
     }
 

@@ -34,8 +34,9 @@ Component({
         const {location, routes} = this.props
         if (location && routes) {
             let finds = routes.findIndex(item => item.component == location)
-            console.log(finds, '1111111');
+            let redirect = this.props.routes.filter(v => v.redirect !== undefined)
             this.setData({
+                redirect,
                 itemSelect: finds,
                 titleName: routes[finds].name
             })
@@ -65,12 +66,28 @@ Component({
                 }
             })
         },
-        itemSelect(e) {
-            this.props.onSelect && this.props.onSelect(e.currentTarget.dataset.component);
+        setitemSelectData(index, component) {
+            this.props.onSelect && this.props.onSelect(component);
             this.setData({
-                itemSelect: e.currentTarget.dataset.index,
-                titleName: this.props.routes[e.currentTarget.dataset.index].name
+                itemSelect: index,
+                titleName: this.props.routes[index].name
             })
+        },
+        itemSelect(e) {
+            let {redirect} = this.data
+            let {component, index} = e.currentTarget.dataset
+            if (redirect.length > 0) {
+                redirect.map(v => {
+                    if (v.component == component) {
+                        let finds = this.props.routes.findIndex(item => item.component == v.redirect)
+                        this.setitemSelectData(finds, v.redirect)
+                    } else {
+                        this.setitemSelectData(index, component)
+                    }
+                })
+            } else {
+                this.setitemSelectData(index, component)
+            }
         },
         contactUs(e) {
             this.setData({
