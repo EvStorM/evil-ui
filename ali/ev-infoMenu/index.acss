@@ -10,8 +10,14 @@
   height: 100vh;
   background-color: #FFFFFF;
 }
-
+.ev-in-white {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .ev-otherInfo {
+  width: 100%;
   padding-bottom: 36px;
 }
 .ev-bottomJump{

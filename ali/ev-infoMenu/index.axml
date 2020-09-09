@@ -17,7 +17,7 @@
         <view class="ev-otherInfo ev-fc">
             <view class="ev-fc" onTap="dueToTime">
                 <text class="ev-m-l-6 {{dueTo ? 'colorRed':''}}">系统到期时间：</text>
-                <view class="ev-m-t-6 {{dueTo ? 'colorRed':''}}">{{dueToStr}}</view>
+                <view class="ev-m-t-6 ev-in-white {{dueTo ? 'colorRed':''}}">{{dueToStr}}</view>
             </view>
             <view class="ev-bottomJump">
                 <view onTap="useGuide">
