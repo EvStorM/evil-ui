@@ -30,7 +30,7 @@
         </view>
     </view>
     <view class="ev-infoFc">
-        <view class="ev-topLabel">
+        <view class="ev-topLabel ev-fr">
             <view class="labelBox ev-fr">
                 <view class="ev-h1">
                     {{titleName}}

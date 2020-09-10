@@ -1,17 +1,18 @@
-
 .ev-sideToTakeUp {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-width: 12vw;
+  //min-width: 12vw;
+  max-width: 150px;
   min-height: 100vh;
   width: 12vw;
   height: 100vh;
   background-color: #FFFFFF;
 }
 .ev-in-white {
-  width: 100%;
+  max-width: 150px;
+  width: 12vw;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -24,13 +25,14 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 12px 12px 0;
 }
 
 .ev-info {
-  min-width: 12vw;
+  //min-width: 12vw;
+  max-width: 150px;
   min-height: 18vw;
   width: 12vw;
   height: 18vw;
@@ -54,7 +56,8 @@
 }
 
 .ev-menu {
-  min-width: 12vw;
+  //min-width: 12vw;
+  max-width: 150px;
   min-height: auto;
   width: 12vw;
   height: auto;
@@ -84,7 +87,8 @@
 
 .ev-topLabel {
   display: inline-block;
-  min-width: 88vw;
+  //min-width: 88vw;
+  min-width: calc(100vw - 150px);
   min-height: 52px;
   width: 88vw;
   height: 52px;
@@ -97,10 +101,12 @@
 
 .ev-infoBody {
   display: inline-block;
-  min-width: 88vw;
-  min-height: 92vh;
+  //min-width: 88vw;
+  max-width: 1280px;
+  min-height: calc(100vh - 52px);
+  max-height: calc(100vh - 52px);
   width: 88vw;
-  height: 92vh;
+  height: calc(100vh - 52px);
   background-color: #F7F8FA;
   overflow: scroll;
 }
@@ -111,6 +117,7 @@
 }
 
 .ev-infoFr {
+  background-color: #F7F8FA;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
