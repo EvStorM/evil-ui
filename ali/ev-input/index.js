@@ -27,6 +27,7 @@ Component({
         disabledValue: null,
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
+        autoFocus: false, // 自动聚焦
         hasLimitHint: false, // 最大长度样式
         readOnly: false, //  Boolean 只读
         // cutString: false,
@@ -37,9 +38,13 @@ Component({
     didMount() {
         if (this.props.defaultValue != '') {
             this.setData({
-                value: this.props.defaultValue
+                value: this.props.propValue
             })
-            // this.props.onChange && this.props.onChange(this.props.defaultValue);
+        }
+        if (this.props.propValue != '') {
+            this.setData({
+                value: this.props.propValue
+            })
         }
         this.props.onRef && this.props.onRef(this)
     },
@@ -50,6 +55,12 @@ Component({
                 disabled: true
             })
             this.props.onChange && this.props.onChange(this.props.disabledValue);
+        }
+        if (this.data.propValue !== this.props.propValue) {
+            this.setData({
+                value: this.props.propValue,
+                propValue: this.props.propValue
+            })
         }
     },
     didUnmount() {
@@ -63,18 +74,16 @@ Component({
             this.setData({
                 value,
             })
-            this.props.onChange && this.props.onChange(e.detail.value);
+            console.log(value, 'values');
+            this.props.onChange && this.props.onChange(value);
         },
         onKeyDown(e) {
-            let event = fmtEvent(this.props, e);
-            this.props.onKeyDown && this.props.onKeyDown(event);
+            this.props.onKeyDown && this.props.onKeyDown(e);
         },
         onFocus(e) {
-            let event = fmtEvent(this.props, e);
-            this.props.onFocus && this.props.onFocus(event);
+            this.props.onFocus && this.props.onFocus(e);
         },
         onBlur(e) {
-            let event = fmtEvent(this.props, e);
             this.props.onBlur && this.props.onBlur(this.data.value);
         },
         onClear() {
@@ -83,8 +92,7 @@ Component({
             })
         },
         onPressEnter(e) {
-            let event = fmtEvent(this.props, e);
-            this.props.onPressEnter && this.props.onPressEnter(event);
+            this.props.onPressEnter && this.props.onPressEnter(e);
         }
     },
 });

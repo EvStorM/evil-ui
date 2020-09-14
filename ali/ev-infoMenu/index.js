@@ -1,7 +1,3 @@
-import fmtEvent from "../_util/fmtEvent";
-import cloud from "@tbmp/mp-cloud-sdk";
-import dayjs from "dayjs";
-
 Component({
     mixins: [],
     data: {
@@ -12,6 +8,7 @@ Component({
         dueToTime: '1970.01.01 00:00'
     },
     props: {
+        appName: '庚辛小程序',
         location: '',
         titleName: '首页',
         onSelect: null,
@@ -22,53 +19,71 @@ Component({
         dueToTime: '2020.12.12 12:12'
     },
     didMount() {
-        cloud.init({
-            env: 'online'
-        })
-        const {location, routes} = this.props
+
+        const {location, routes, dueToStr, dueToTime, dueTo} = this.props
         if (location && routes) {
             let finds = routes.findIndex(item => item.component == location)
-            console.log(finds, '1111111');
+            let redirect = this.props.routes.filter(v => v.redirect !== undefined)
             this.setData({
+                location,
+                redirect,
+                dueTo,
+                dueToTime,
+                dueToStr,
                 itemSelect: finds,
                 titleName: routes[finds].name
             })
         }
-        this.getDueToTime()
+        if (this.props.dueTo) {
+            this.setData({
+                visible2: true
+            })
+        }
 
     },
     didUpdate() {
+        if (this.props.location !== this.data.location) {
+            console.log(this.props.location, 'this.props.location');
+            let {redirect} = this.data
+            if (redirect.length > 0) {
+                redirect.map(v => {
+                    if (v.component == this.props.location) {
+                        let finds = this.props.routes.findIndex(item => item.component == v.redirect)
+                        this.setitemSelectData(finds, v.redirect)
+                    }
+                })
+            }
+        }
     },
     didUnmount() {
     },
     methods: {
-        getDueToTime() {
-            cloud && this.props.DeadLineQueryFunc(cloud, ['', '']).subscribe(res => {
-                let dueToTime = res.data[0].deadline
-                let dueTo = dayjs(dueToTime).diff(dayjs(), 'day') <= 3 ? true : false
-                console.log(dueTo);
-                this.setData({
-                    dueToTime,
-                    dueTo
-                })
-                if (dueTo) {
-                    this.setData({
-                        visible2: true
-                    })
-                }
+        setitemSelectData(index, component) {
+            this.props.onSelect && this.props.onSelect(component);
+            this.setData({
+                itemSelect: index,
+                titleName: this.props.routes[index].name
             })
         },
         itemSelect(e) {
-            this.props.onSelect && this.props.onSelect(e.currentTarget.dataset.component);
-            this.setData({
-                itemSelect: e.currentTarget.dataset.index,
-                titleName: this.props.routes[e.currentTarget.dataset.index].name
-            })
+            let {component, index} = e.currentTarget.dataset
+            this.setitemSelectData(index, component)
+
         },
         contactUs(e) {
             this.setData({
                 visible: true
             })
+        },
+        useGuide() {
+            let useGuideUrl = this.props.useGuideUrl
+            my.qn.navigateToWebPage({
+                url: useGuideUrl,
+                success: res => {
+                },
+                fail: res => {
+                }
+            });
         },
         clearAuth() {
             my.qn.cleanToken({

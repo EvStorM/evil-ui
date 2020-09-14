@@ -22,6 +22,11 @@ Component({
         }
     },
     didUpdate() {
+        // if (this.props.defaultValue != this.data.defaultValue) {
+        //     this.setData({
+        //         value: this.props.defaultValue
+        //     })
+        // }
     },
     didUnmount() {
     },

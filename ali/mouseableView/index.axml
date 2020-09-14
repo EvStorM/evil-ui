@@ -1,0 +1,23 @@
+<view>
+    <view>{{indexData}}</view>
+    <mouseable-view
+            class="one"
+            onMouseover="common"
+            onMouseout="common"
+            onMouseenter="common"
+            onMouseleave="common"
+            onMouseup="handleMouseUp"
+            onMousemove="handleMouseMove"
+    >
+        <mouseable-view
+                class="two"
+                style="left:{{ x }}px;top:{{ y }}px;"
+                onMouseover="common2"
+                onMouseout="common2"
+                onMouseenter="common2"
+                onMouseleave="common2"
+                onMousedown="handleDown"
+        >123123123
+        </mouseable-view>
+    </mouseable-view>
+</view>

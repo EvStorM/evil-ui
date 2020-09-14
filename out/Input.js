@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Inp from '../ali/ev-input'
-import fmtEvent from "../ali/_util/fmtEvent";
 
 export class Input extends React.Component {
     constructor(props) {
@@ -16,9 +15,11 @@ export class Input extends React.Component {
         type: 'text',
         value: '',
         size: 'medium', //尺寸  可选值: 'small'(小) 'medium'(中) 'large'(大)
-        defaultValue: '', //初始化值
+        defaultValue: '', //初始化固定值
+        propValue: '', //初始化动态值
         placeholder: '', //输入提示
         title: '',
+        autoFocus: false,
         onChange: null, //发生改变的时候触发的回调
         onKeyDown: null, //键盘按下的时候触发的回调
         onFocus: null,  //获取焦点时候触发的回调
@@ -30,7 +31,6 @@ export class Input extends React.Component {
         hasClear: true, //Boolean 是否出现clear按钮
         hasBorder: true,//Boolean 是否有边框
         disabledValue: null,
-
         disabled: false, //Boolean  禁用状态
         maxLength: null, //Number   最大长度
         hasLimitHint: false,
@@ -42,22 +42,26 @@ export class Input extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.defaultValue !== '') {
+        if (this.props.propValue !== '') {
             this.setState({
-                value: this.props.defaultValue
+                propValue: this.props.propValue
             })
-            // this.props.onChange && this.props.onChange(this.props.defaultValue);
         }
         this.props.onRef && this.props.onRef(this)
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.disabledValue != null) {
+        if (prevProps.disabledValue != null) {
             this.setState({
                 value: this.props.disabledValue,
                 disabled: true
             })
             this.props.onChange && this.props.onChange(this.props.disabledValue);
+        }
+        if (prevProps.propValue !== this.state.propValue) {
+            this.setState({
+                propValue: this.props.propValue,
+            })
         }
     }
 
@@ -81,7 +85,7 @@ export class Input extends React.Component {
     }
 
     onBlur(e) {
-        this.props.onBlur && this.props.onBlur(this.state.value);
+        this.props.onBlur && this.props.onBlur(e);
     }
 
     onClear() {
@@ -91,8 +95,7 @@ export class Input extends React.Component {
     }
 
     onPressEnter(e) {
-        let event = fmtEvent(this.props, e);
-        this.props.onPressEnter && this.props.onPressEnter(event);
+        this.props.onPressEnter && this.props.onPressEnter(this.state.value);
     }
 
     render() {
@@ -104,7 +107,8 @@ export class Input extends React.Component {
                 className={props.className}
                 value={value}
                 size={props.size}
-                defaultValue={props.defaultValue}
+                propValue={this.state?.propValue}
+                defaultValue={this.state?.defaultValue}
                 placeholder={props.placeholder}
                 onChange={this.onChange.bind(this)}
                 onKeyDown={this.onKeyDown.bind(this)}
@@ -113,6 +117,7 @@ export class Input extends React.Component {
                 onClear={this.onClear.bind(this)}
                 onPressEnter={this.onPressEnter.bind(this)}
                 state={props.state}
+                autoFocus={props.autoFocus}
                 addonTextBefore={props.addonTextBefore}
                 addonTextAfter={props.addonTextAfter}
                 hasClear={props.hasClear}

@@ -40,10 +40,10 @@ export class Image extends React.Component {
                 mode={props.mode}
                 className={props.className}
                 lazyLoad={props.lazyLoad}
-                onLoad={this.onLoad}
-                onError={this.onError}
-                onTap={this.onTap}
-                catchTap={this.catchTap}
+                onLoad={this.onLoad.bind(this)}
+                onError={this.onError.bind(this)}
+                onTap={this.onTap.bind(this)}
+                catchTap={this.catchTap.bind(this)}
             />
         )
     }
