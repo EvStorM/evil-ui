@@ -10,6 +10,25 @@
   height: 100vh;
   background-color: #FFFFFF;
 }
+.ev-in-white {
+  max-width: 150px;
+  width: 12vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ev-otherInfo {
+  width: 100%;
+  padding-bottom: 36px;
+}
+.ev-bottomJump{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 12px 0;
+}
 
 .ev-infoFc {
   width: 88%;
