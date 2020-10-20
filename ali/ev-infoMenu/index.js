@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-import fmtEvent from "../_util/fmtEvent";
-import cloud from "@tbmp/mp-cloud-sdk";
-import dayjs from "dayjs";
-import {qnSubscribeDeadLineQuery} from "../../../hooks/cloudFunc";
-
->>>>>>> 4c339861f7059db9b4b27ef2db56168638141ba6
 Component({
     mixins: [],
     data: {
@@ -77,22 +69,6 @@ Component({
             let {component, index} = e.currentTarget.dataset
             this.setitemSelectData(index, component)
 
-        },
-        itemSelect(e) {
-            let {redirect} = this.data
-            let {component, index} = e.currentTarget.dataset
-            if (redirect.length > 0) {
-                redirect.map(v => {
-                    if (v.component == component) {
-                        let finds = this.props.routes.findIndex(item => item.component == v.redirect)
-                        this.setitemSelectData(finds, v.redirect)
-                    } else {
-                        this.setitemSelectData(index, component)
-                    }
-                })
-            } else {
-                this.setitemSelectData(index, component)
-            }
         },
         contactUs(e) {
             this.setData({
