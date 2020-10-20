@@ -8,6 +8,7 @@
         onBlur="onBlur"
         disabled="{{disabled}}"
         rows="{{rows}}"
+        autoFocus="{{autoFocus}}"
         autoHeight="{{autoHeight}}"
         cutString="{{cutString}}"
         readOnly="{{readOnly}}"

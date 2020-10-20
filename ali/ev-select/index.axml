@@ -8,7 +8,7 @@
     </select>
 </view>
 <select a:else class="{{className}}"
-        dataSource="{{dataSource}}" onChange="onChange"
+        dataSource="{{dataSource}}" onChange="onChange" 
         autoWidth="{{autoWidth}}" mode="{{mode}}" value="{{value}}"
         state="{{state}}" followTrigger="{{followTrigger}}" disabled="{{disabled}}"
         size="{{size}}" placeholder="{{placeholder}}">

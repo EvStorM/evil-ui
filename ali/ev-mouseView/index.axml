@@ -1,0 +1,14 @@
+<mouseable-view
+      class="{{className}}"
+      style="{{style}}"
+      id="{{id}}"
+      onMouseover="onMouseover"
+      onMouseout="onMouseout"
+      onMouseenter="onMouseenter"
+      onMouseleave="onMouseleave"
+      onMouseup="onMouseup"
+      onMousedown="onMousedown"
+      onMousemove="onMousemove"
+>
+    <slot></slot>
+</mouseable-view>
