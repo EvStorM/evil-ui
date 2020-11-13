@@ -12,6 +12,7 @@
 ## 特性
 
 - 基于 **Alipay Design** 设计规范；
+- 适用与remax开发淘宝千牛端项目；
 - 支持多端小程序（支付宝，淘宝，钉钉等）；
 - 支持主题配置切换；
 <!-- - 支持 `px` 与 `rpx`； -->
@@ -33,7 +34,3 @@ import {View,Input} from 'evil-ui'
 
 <!-- 
 详细使用说明请参照官方文档[使用自定义组件](https://docs.alipay.com/mini/framework/use-custom-component)
-
-## 贡献
-
-如果你有好的意见或建议，欢迎给我们提 [issue](https://github.com/Alibaba-mp/mini-ali-ui/issues)。 -->
